@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./index.css";
 
 export default function WeatherSearch() {
   let [city, setCity] = useState("");
@@ -14,6 +15,7 @@ export default function WeatherSearch() {
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
+      icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png}`,
     });
   }
   // the functin is supposed to collect information from API Url after clicking the search button
@@ -29,7 +31,7 @@ export default function WeatherSearch() {
   }
 
   let form = (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="form">
       <input
         type="Search"
         placeholder="Input a city..."
@@ -48,6 +50,9 @@ export default function WeatherSearch() {
           <li>Wind: {weather.wind}</li>
           <li>description:{weather.description}</li>
           <li>Humidity:{weather.humidity}</li>
+          <li>
+            <img src={weather.icon} alt={weather.description} />
+          </li>
         </ul>
       </div>
     );
