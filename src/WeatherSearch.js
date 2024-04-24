@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./index.css";
+import WeatherInfo from "./WeatherInfo";
 
-export default function WeatherSearch() {
-  let [city, setCity] = useState("");
+export default function WeatherSearch(props) {
+  let [city, setCity] = useState(props.defaultCity);
   let [weather, setWeather] = useState({});
   let [loaded, setLoaded] = useState(false);
 
@@ -15,6 +16,8 @@ export default function WeatherSearch() {
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
+      date: new Date(response.data.dt * 1000),
+      city:response.data.city,
       icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png}`,
     });
   }
@@ -35,7 +38,7 @@ export default function WeatherSearch() {
       <input
         type="Search"
         placeholder="Input a city..."
-        onChange={updateCity}
+        onChange={updateCity} autoFocus = "on"
       />
       <button type="submit">Search</button>
     </form>
@@ -45,18 +48,10 @@ export default function WeatherSearch() {
     return (
       <div>
         {form}
-        <ul>
-          <li>Temperature: {Math.round(weather.temperature)}</li>
-          <li>Wind: {weather.wind}</li>
-          <li>description:{weather.description}</li>
-          <li>Humidity:{weather.humidity}</li>
-          <li>
-            <img src={weather.icon} alt={weather.description} />
-          </li>
-        </ul>
+        <WeatherInfo data={weather} />
       </div>
     );
   } else {
     return form;
-  }
+    
 }

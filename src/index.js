@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import "bootstrap/dist/css/bootstrap.css";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import "./WeatherSearch";
@@ -8,7 +9,7 @@ import WeatherSearch from "./WeatherSearch";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <WeatherSearch />
+    <WeatherSearch defaultCity = "Cairo"/>
     <h4>
       Open sourced by, 
        <a href="https://github.com/CharlotteHelga/reactsearchbox">CharlotteHelga</a>
