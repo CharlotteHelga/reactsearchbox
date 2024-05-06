@@ -9,7 +9,7 @@ import WeatherSearch from "./WeatherSearch";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <WeatherSearch defaultCity = "Cairo"/>
+    <WeatherSearch defaultCity = "Nairobi"/>
     <h4>
       Open sourced by, 
        <a href="https://github.com/CharlotteHelga/reactsearchbox">CharlotteHelga</a>

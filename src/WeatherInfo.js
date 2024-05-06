@@ -15,11 +15,11 @@ export default function WeatherInfo(props) {
               Humidity:{props.data.humidity}%, Wind: {props.data.wind} km/hr
             </div>
           </div>
-          <div className="col-6">
+          <div className="col-6 column2">
             <h2>
               <span>
                 <img src={props.data.icon} alt={props.data.description} />
-                {Math.round(props.data.temperature)}
+                {Math.round(props.data.temperature)}°C
               </span>
             </h2>
           </div>

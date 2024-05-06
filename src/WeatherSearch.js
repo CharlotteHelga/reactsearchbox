@@ -3,6 +3,7 @@ import axios from "axios";
 import "./index.css";
 import WeatherInfo from "./WeatherInfo";
 
+
 export default function WeatherSearch(props) {
   let [city, setCity] = useState(props.defaultCity);
   let [weather, setWeather] = useState({});
@@ -17,8 +18,8 @@ export default function WeatherSearch(props) {
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
       date: new Date(response.data.dt * 1000),
-      city:response.data.city,
-      icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png}`,
+      city:response.data.name,
+      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png}`,
     });
   }
   // the functin is supposed to collect information from API Url after clicking the search button
@@ -53,5 +54,5 @@ export default function WeatherSearch(props) {
     );
   } else {
     return form;
-    
-}
+  }
+}  
