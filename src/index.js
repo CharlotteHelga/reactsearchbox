@@ -5,15 +5,22 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import "./WeatherSearch";
 import WeatherSearch from "./WeatherSearch";
+import WeatherForecast from "./WeatherForecast";
+// import WeatherInfo from "./WeatherInfo";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <WeatherSearch defaultCity = "Nairobi"/>
-    <h4>
-      Open sourced by, 
-       <a href="https://github.com/CharlotteHelga/reactsearchbox">CharlotteHelga</a>
-    </h4>
+    <WeatherSearch defaultCity="Nairobi" />
+    <div>
+      <h4>
+        Open sourced by,
+        <a href="https://github.com/CharlotteHelga/reactsearchbox">
+          CharlotteHelga
+        </a>
+      </h4>
+      <WeatherForecast/>
+    </div>
   </React.StrictMode>
 );
 

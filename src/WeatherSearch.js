@@ -19,13 +19,14 @@ export default function WeatherSearch(props) {
       description: response.data.weather[0].description,
       date: new Date(response.data.dt * 1000),
       city:response.data.name,
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png}`,
+      iconApi: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
   }
   // the functin is supposed to collect information from API Url after clicking the search button
   function handleSubmit(event) {
     event.preventDefault();
-    let apiKey = "094780c710fa4efd669f0df8c3991927";
+    // let apiKey = "094780c710fa4efd669f0df8c3991927";
+    let apiKey = "cb41405eec5005279f05d59c00864763";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(displayWeather);
   }
@@ -44,7 +45,6 @@ export default function WeatherSearch(props) {
       <button type="submit">Search</button>
     </form>
   );
-
   if (loaded) {
     return (
       <div>
