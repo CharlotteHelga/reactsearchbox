@@ -37,3 +37,6 @@ button{
 li{
   list-style: none;
 }
+.WeatherForecast{
+  text-align: center;
+}
