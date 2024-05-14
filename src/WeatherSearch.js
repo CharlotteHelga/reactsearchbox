@@ -4,25 +4,24 @@ import "./index.css";
 import WeatherInfo from "./WeatherInfo";
 import WeatherForecast from "./WeatherForecast";
 
-
 export default function WeatherSearch(props) {
   let [city, setCity] = useState(props.defaultCity);
-  let [weather, setWeather] = useState({ready: false});
+  let [weather, setWeather] = useState({ ready: false });
   // let [loaded, setLoaded] = useState(false);
-
+  console.log(weather);
   //what the UI is supposed to display
   function displayWeather(response) {
-    // console.log(response.data);
+    
     // setLoaded(true);
     setWeather({
-      ready: true, 
+      ready: true,
       coordinates: response.data.coord,
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
       date: new Date(response.data.dt * 1000),
-      city:response.data.name,
+      city: response.data.name,
       iconApi: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
   }
@@ -46,7 +45,8 @@ export default function WeatherSearch(props) {
           type="Search"
           placeholder="Input a city..."
           onChange={updateCity}
-          autoFocus="on" className="col-9 text-center"
+          autoFocus="on"
+          className="col-9 text-center"
         />
         <button type="submit">Search</button>
       </form>
@@ -57,7 +57,10 @@ export default function WeatherSearch(props) {
       <div>
         {form}
         <WeatherInfo data={weather} />
-        <WeatherForecast coordinates={weather.coordinates} temperature={weather.temperature} />
+        <WeatherForecast
+          coordinates={weather.coordinates}
+          temperature={weather.temperature}
+        />
       </div>
     );
   } else {
@@ -66,4 +69,4 @@ export default function WeatherSearch(props) {
     axios.get(apiUrl).then(displayWeather);
     return form;
   }
-}  
+}

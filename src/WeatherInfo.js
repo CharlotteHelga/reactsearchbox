@@ -4,10 +4,10 @@ import FormattedDate from "./FormattedDate";
 
 export default function WeatherInfo(props) {
   return (
-    <div className="WeatherInfo">
-      <div className="container">
+    <div className="WeatherInfo position-relative">
+      <div className="container ">
         <div className="row">
-          <div className="col-6">
+          <div className="col-6 ">
             <h1>{props.data.city}</h1>
             <div>
               <FormattedDate date={props.data.date} />,{props.data.description}

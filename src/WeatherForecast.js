@@ -18,26 +18,26 @@ export default function WeatherForecast(props) {
     //console.log(response.data);
   }
 
-  //   console.log(forecast);
+  //console.log(forecast);
 
   if (loaded) {
-    <div className="col">
-      <WeatherForecastDay data={forecast[0]} />
-      <div className="row">
-        {forecast.map(function (dailyForecast, index) {
-          if (index < 5) {
-            return (
-              <div className="col" key={index}>
-                <WeatherForecastDay data={dailyForecast} />
-              </div>
-            );
-          }
-          else {
-            return null;
-          }
-        })}
+    return (
+      <div className="col ">
+        <div className="row">
+          {forecast.map(function (dailyForecast, index) {
+            if (index < 5) {
+              return (
+                <div className="col" key={index}>
+                  <WeatherForecastDay data={dailyForecast} />
+                </div>
+              );
+            } else {
+              return null;
+            }
+          })}
+        </div>
       </div>
-    </div>;
+    );
   } else {
     let longitude = props.coordinates.lon;
     let latitude = props.coordinates.lat;
@@ -46,21 +46,6 @@ export default function WeatherForecast(props) {
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
     //let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
+    return null;
   }
-  //   return (
-  //     <div className=" pt-5">
-  //       <div className="container">
-  //         <div className="row">
-  //           <div className="col-2 sm-text-center WeatherForecast">
-  //             <div>Tue</div>
-  //             <div>icon</div>
-  //             <div>
-  //               001
-  //               {/* 0//{forecast.temp.min}/{forecast.temp.min} */}
-  //             </div>
-  //           </div>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   );
 }
