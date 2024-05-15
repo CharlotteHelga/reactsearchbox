@@ -1,24 +1,30 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* text-align: center; */
-  border: 1px solid white;
+  /* border: 1px solid #ffffff; */
   border-radius: 10px;
-  max-width: 75%;
-  box-shadow: 0px 30px 50px rgb(207, 204, 204);
-  margin: 0 auto;
+  /* max-width: 85%; */
+  margin: auto;
   margin-top: 100px;
+  background-image: radial-gradient(#3C4043, #292D31)
 }
-
+.bodyInfo{
+  background-image: url(seaBackgrd.jpg);
+  border: 1px solid #0B2E42;
+  box-shadow: 0px 30px 50px rgb(207, 204, 204);
+  padding: 30px;
+  color: white;
+}
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-input{
+input {
   /* margin: 20px; */
   margin-left: 100px;
   padding: 15px;
@@ -26,7 +32,7 @@ input{
   border-radius: 10px;
   margin: 0 auto;
 }
-button{
+button {
   margin: 20px;
   padding: 15px;
   background-color: blueviolet;
@@ -34,9 +40,28 @@ button{
   border: white;
   font-size: large;
 }
-li{
+li {
   list-style: none;
 }
-.WeatherForecast{
+.WeatherForecast {
   text-align: center;
+}
+.card{
+  padding: 10px;
+  padding-right: 20px;
+  text-align: center;
+  background-color: #f1f1f1;
+  width: 70%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
+}
+.mainTemp{
+  font-size: 80px;
+}
+button{
+  background-color: #ffffff;
+}.cels{
+  font-size: 30px;
+}
+.iconImg{
+  padding-top: -30px;
 }

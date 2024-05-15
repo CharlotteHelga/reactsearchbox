@@ -11,14 +11,16 @@ import WeatherSearch from "./WeatherSearch";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <WeatherSearch defaultCity="New York" />
-    <div>
-      <p className="text-center pt-5">
-        Open sourced by,
-        <a href="https://github.com/CharlotteHelga/reactsearchbox">
-          CharlotteHelga
-        </a>
-      </p>
+    <div className="bodyInfo">
+      <WeatherSearch defaultCity="Kampala" />
+      <div>
+        <p className="text-center pt-5 font-monospace">
+          Coded by,
+          <a href="https://github.com/CharlotteHelga" >
+            CharlotteHelga 
+          </a>and open source on <a href="https://github.com/CharlotteHelga/reactsearchbox" >Github</a>
+        </p>
+      </div>
     </div>
   </React.StrictMode>
 );

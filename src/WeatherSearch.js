@@ -11,7 +11,6 @@ export default function WeatherSearch(props) {
   console.log(weather);
   //what the UI is supposed to display
   function displayWeather(response) {
-    
     // setLoaded(true);
     setWeather({
       ready: true,
@@ -40,7 +39,10 @@ export default function WeatherSearch(props) {
 
   let form = (
     <div className="row">
-      <form onSubmit={handleSubmit} className="form">
+      <form
+        onSubmit={handleSubmit}
+        className="form"
+      >
         <input
           type="Search"
           placeholder="Input a city..."
