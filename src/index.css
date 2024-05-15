@@ -59,9 +59,11 @@ li {
 }
 button{
   background-color: #ffffff;
-}.cels{
+}
+.cels{
   font-size: 30px;
+  margin-top: -100px !important;
 }
 .iconImg{
-  padding-top: -30px;
+  margin-top: -50px !important;
 }

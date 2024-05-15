@@ -24,7 +24,6 @@ export default function WeatherInfo(props) {
                 className="img-fluid iconImg"
                 src={props.data.iconApi}
                 alt={props.data.description}
-                animate={true}
               />
               <span className="mainTemp">
                 {Math.round(props.data.temperature)}
